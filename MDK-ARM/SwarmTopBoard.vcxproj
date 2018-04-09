@@ -61,15 +61,29 @@
       <AdditionalOptions />
       <CLanguageStandard />
       <CPPLanguageStandard />
+      <DumpStackUsage>true</DumpStackUsage>
     </ClCompile>
     <Link>
       <LibrarySearchDirectories>%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
       <AdditionalLibraryNames>%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
       <AdditionalLinkerInputs>%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
       <AdditionalOptions />
+      <ProduceRelocationRecords>true</ProduceRelocationRecords>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Inc\main.h" />
+    <ClInclude Include="..\Inc\stm32f2xx_hal_conf.h" />
+    <ClInclude Include="..\Inc\stm32f2xx_it.h" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\FastSemihosting.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\SamplingProfiler.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\InstrumentingProfiler.cpp" />
+    <ClCompile Include="$(EFP_BASE)\Profiler\ProfilerRTOS_FreeRTOS.c" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfiler.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SmallNumberCoder.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\SysprogsProfilerInterface.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\ProfilerFreeRTOSHooks.h" />
+    <ClInclude Include="$(EFP_BASE)\Profiler\CustomRealTimeWatches.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
